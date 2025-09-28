@@ -1,11 +1,9 @@
 #!/bin/bash
 
-source shell-roboshop-common/common.sh
-check_root   
+source ./common.sh
+check_root  
 
-
-
- cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "Adding Mongo repo"
 
 dnf install mongodb-org -y &>>$LOG_FILE
